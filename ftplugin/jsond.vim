@@ -2,7 +2,7 @@
 " Language:     Racket (#lang jsond)
 " Maintainer:   D. Ben Knoble <ben.knoble+github@gmail.com>
 " URL:          https://github.com/benknoble/vim-racket
-" Last Change:  2022 Aug 29
+" Last Change:  2024 May 28
 
 if exists("b:did_ftplugin")
   finish
@@ -16,8 +16,7 @@ set cpo&vim
 setlocal comments=:;;;;,:;;;,:;;,:;
 setlocal formatoptions+=r
 
-"setlocal commentstring=;;%s
-setlocal commentstring=#\|\ %s\ \|#
+setlocal commentstring=;;\ %s
 
 let b:ale_linter_aliases = ['racket']
 
