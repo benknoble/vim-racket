@@ -46,6 +46,10 @@ let g:racket_hash_lang_dict =
       \   'web-server/insta': 'racket',
       \   'sicp': 'racket',
       \   'scheme/base': 'scheme',
+      \   'zuo/kernel': 'zuo',
+      \   'zuo/datum': 'zuo',
+      \   'zuo/hygienic': 'zuo',
+      \   'zuo/base': 'zuo',
       \ }, 'keep') " keep prefers user dict to the default
 
 " Tries to detect filetype from #lang line; defaults to ft=racket.
@@ -58,4 +62,4 @@ function! RacketDetectHashLang()
   endif
 endfunction
 
-au BufRead,BufNewFile *.rkt,*.rktl call RacketDetectHashLang()
+au BufRead,BufNewFile *.rkt,*.rktl,*.zuo call RacketDetectHashLang()
