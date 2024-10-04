@@ -1,5 +1,7 @@
 # vim-racket
 
+See also [Vim in the Racket Guide](https://docs.racket-lang.org/guide/Vim.html).
+
 Installation
 ------------
 
