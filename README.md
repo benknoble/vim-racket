@@ -13,7 +13,9 @@ Re-open your file(s) and benefit from the features of _vim-racket_.
 
 Pairs well with
 [rparen.vim](https://gist.github.com/plane/8c872ed174ba4f026b95ea8eb934cead), a
-global mapping on `]` to insert the right closer.
+global mapping on `]` to insert the right closer. [Here is one updated version
+of the same
+script](https://github.com/benknoble/Dotfiles/blob/master/links/vim/autoload/rparen.vim)
 
 ## Thanks
 
