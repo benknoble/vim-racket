@@ -1,0 +1,116 @@
+*racket.txt*  Racket language family runtime support for Vim
+
+Author: D. Ben Knoble (and others)
+License: MIT License, copyright contributors
+Source code: <https://github.com/benknoble/vim-racket>
+
+For the latest version or to file a bug report or feature request, use the
+Source code link above.
+
+INTRODUCTION                                    *racket*
+
+Whenever you edit a Racket file, you benefit from the following feature list:
+
+- Filetype detection from `#lang` lines
+- Syntax highlighting, indentation support, and other filetype-specific
+  customizations for Racket family languages and popular extensions
+- A suite of |:compiler| plugins for interacting with `raco` and `zuo`
+
+All but the filetype detection from `#lang` lines is upstreamed to Vim's
+runtime files on a semi-regular basis.
+
+DETAILS                                         *racket-details*
+
+Filetype detection~
+
+When editing a file ending with `.rkt`, `.rktl`, or `.zuo`, attempt to
+discover the correct 'filetype' for the language by the presence of a `#lang`
+line. For example, `#lang racket/base` gets a filetype of `racket` while
+`#lang info` gets a filetype of `racket-info`.
+
+This mechanism permits separately customizing behavior for Racket languages
+that are dissimilar to `#lang racket` via the usual |ftplugin|, |syntax|,
+and automatic indenting (|30.3|) mechanisms.
+
+The `#lang` line must be in the first line of the file; otherwise, the default
+filetype of `racket` is used. Support for scripts (no extension and which use
+a `#!` line) is planned but not currently implemented.
+
+Four points of customization are available, in increasing level of control
+(and thus complexity):
+
+1. *g:racket_hash_lang_dict* may be set to a mapping of languages to
+   filetypes. User preferences set before the |ftdetect| file loads are
+   extended with a default that includes, for example: >
+
+    'racket/base': 'racket',
+    …,
+    'info': 'racket-info',
+<
+2. *g:racket_hash_lang_modifiers* may be set to a list of modifiers that
+   should be ignored when looking for the language. For example, the default
+   ignores the `at-exp` and `s-exp` modifiers, among other popular extensions.
+
+3. *g:racket_hash_lang_modifiers_regex* may be set to a string value to
+   completely override |g:racket_hash_lang_modifiers|. Its default value is a
+   pattern composed of the values of |g:racket_hash_lang_modifiers|, and it
+   used by |g:racket_hash_lang_regexp| to skip modifiers.
+
+4. Similarly, *g:racket_hash_lang_regexp* may be set to a string value to
+   override how `#lang` lines are detected. Its default uses
+   |g:racket_hash_lang_modifiers_regex|.
+
+Customization variables (except strings) set before |ftdetect| files are
+loaded extend the defaults rather than override them. Lists are appended, and
+dictionaries are merged, with a user-set key overriding a default-set key.
+
+Runtime support~
+
+A best effort is made to set useful local options like |comments|,
+|commentstring|, |shiftwidth|, |formatprg|, etc. Racket and Zuo filetypes also
+support an approximation of |keywordprg| by mapping |K|.
+
+Syntax highlighting may also be provided.
+
+Racket and Zuo in Vim versions 9 and higher support custom indentation that
+closely approximates what DrRacket would produce. Many Racket libraries are
+supported for indent via 'lispwords', which the custom indentation support
+also reads and uses.
+
+We also have some support for other plugins, such as configuring ALE to use
+the Racket LSP server.
+
+For more details, see the relevant runtime directories.
+
+Compiler support~
+
+Scripts to support |:compiler| are included in the following variants:
+
+- `raco`: run arbitrary raco commands
+- `raco make`: make the current file
+- `raco setup`: run arbitrary setup commands
+- `raco test`: test the current file
+- `zuo`: run arbitrary zuo
+
+If you don't like the changes to 'makeprg' but still want better output
+parsing, consider doing something like >
+
+    :compiler racotest
+    :setlocal makeprg&
+<
+
+CONTRIBUTING                                     *racket-contributing*
+
+Use the Source code link at the top of this document to report bugs or suggest
+features.
+
+If you develop language support for Vim for a Racket or Racket-based language,
+please consider including it as part of this plugin for all Vim users to benefit
+from.
+
+If you develop a Racket library that requires custom indentation support,
+please consider contributing to the indent scripts. For example, we have
+additional support for Qi, racket/gui/easy, kanren, and rackunit in the
+current version.
+
+ vim:tw=78:et:ft=help:norl:

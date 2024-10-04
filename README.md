@@ -11,7 +11,8 @@ pathogen, type the following into a terminal:
     cd ~/.vim/bundle
     git clone https://github.com/benknoble/vim-racket.git
 
-Re-open your file(s) and benefit from the features of _vim-racket_.
+Re-open your file(s) and benefit from the features of _vim-racket_. See [`:help
+racket`](./doc/racket.txt) for more details.
 
 Pairs well with
 [rparen.vim](https://gist.github.com/plane/8c872ed174ba4f026b95ea8eb934cead), a
