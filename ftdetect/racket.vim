@@ -5,6 +5,7 @@ let g:racket_hash_lang_modifiers =
       \ 'errortrace',
       \ 'pollen/mode',
       \ 'debug',
+      \ 'curly-fn',
       \ ])
 
 let g:racket_hash_lang_modifiers_regex =
