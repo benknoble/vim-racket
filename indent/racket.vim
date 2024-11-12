@@ -3,7 +3,7 @@
 " Maintainer:           D. Ben Knoble <ben.knoble+github@gmail.com>
 " Previous Maintainer:  Will Langstroth <will@langstroth.com>
 " URL:                  https://github.com/benknoble/vim-racket
-" Last Change:          2024 Jun 14
+" Last Change:          2024 Nov 12
 
 if exists("b:did_indent")
    finish
@@ -56,6 +56,7 @@ setlocal lispwords+=for/set,for*/set
 setlocal lispwords+=for/first,for*/first
 setlocal lispwords+=for/last,for*/last
 setlocal lispwords+=for/stream,for*/stream
+setlocal lispwords+=for/lists,for*/lists
 
 setlocal lispwords+=match,match*,match/values,define/match,match-lambda,match-lambda*,match-lambda**
 setlocal lispwords+=match-let,match-let*,match-let-values,match-let*-values
