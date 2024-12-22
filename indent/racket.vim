@@ -50,7 +50,7 @@ setlocal lispwords+=fresh,run,run*,project,conde,condu
 
 " loops
 setlocal lispwords+=for,for/list,for/fold,for*,for*/list,for*/fold,for/or,for/and,for*/or,for*/and
-setlocal lispwords+=for/hash,for/hasheq,for/hasheqv,for/sum,for/flvector,for*/flvector,for/vector,for*/vector,for*/sum,for*/hash,for*/hasheq,for*/hasheqv
+setlocal lispwords+=for/hash,for/hasheq,for/hasheqv,for/sum,for/flvector,for*/flvector,for/vector,for*/vector,for/fxvector,for*/fxvector,for*/sum,for*/hash,for*/hasheq,for*/hasheqv
 setlocal lispwords+=for/async
 setlocal lispwords+=for/set,for*/set
 setlocal lispwords+=for/first,for*/first
