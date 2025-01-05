@@ -16,6 +16,7 @@ if has('vim9script')
 endif
 
 setlocal lispwords+=module,module*,module+,parameterize,parameterize*,let-values,let*-values,letrec-values,local
+setlocal lispwords+=splicing-let,splicing-letrec,splicing-let-values,splicing-letrec-values,splicing-local,splicing-parameterize
 setlocal lispwords+=define/contract
 setlocal lispwords+=λ
 setlocal lispwords+=with-handlers
