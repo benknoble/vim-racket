@@ -3,7 +3,7 @@
 " Maintainer:           D. Ben Knoble <ben.knoble+github@gmail.com>
 " Previous Maintainer:  Will Langstroth <will@langstroth.com>
 " URL:                  https://github.com/benknoble/vim-racket
-" Last Change:          2024 Jun 01
+" Last Change:          2026 Apr 03
 
 if exists("b:did_ftplugin")
   finish
@@ -51,7 +51,7 @@ if !exists("no_plugin_maps") && !exists("no_racket_maps")
     try
       let l:old_a = @a
       normal! gv"ay
-      call system("raco docs '". @a . "'")
+      call system("raco docs -- ". string(shellescape(@a)))
       redraw!
       return @a
     finally
