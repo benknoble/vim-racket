@@ -3,7 +3,7 @@
 " Maintainer:           D. Ben Knoble <ben.knoble+github@gmail.com>
 " Previous Maintainer:  Will Langstroth <will@langstroth.com>
 " URL:                  https://github.com/benknoble/vim-racket
-" Last Change:          2026 Apr 03
+" Last Change:          2026 Jun 28
 
 if exists("b:did_ftplugin")
   finish
@@ -16,7 +16,9 @@ set cpo&vim
 " quick hack to allow adding values
 setlocal iskeyword=@,!,#-',*-:,<-Z,a-z,~,_,94
 
-setlocal shiftwidth=2 softtabstop=2
+if get(g:, 'racket_recommended_style', get(g:, 'filetype_recommended_style', 1))
+  setlocal shiftwidth=2 softtabstop=2
+endif
 
 " Enable auto begin new comment line when continuing from an old comment line
 setlocal comments=:;;;;,:;;;,:;;,:;
