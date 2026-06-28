@@ -4,7 +4,7 @@
 " Previous Maintainer:  Will Langstroth <will@langstroth.com>
 " URL:                  https://github.com/benknoble/vim-racket
 " Description:          Contains all of the keywords in #lang racket
-" Last Change:          2024 Apr 14
+" Last Change:          2025 Sep 10
 
 " Initializing:
 if exists("b:current_syntax")
